@@ -26,7 +26,6 @@ const App =( )=> {
     :
     dogs
 
-
   return (
     <div className="App">
       
@@ -39,7 +38,7 @@ const App =( )=> {
         </button>
       </div>
       
-      <div id="dog-bar">
+      <div>
         <DogContainer 
           dogs = { filterDogs() }
           setDog = { setDog }
