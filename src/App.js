@@ -22,9 +22,9 @@ const App =( )=> {
 
   const filterDogs =( )=> 
     filter ?
-    dogs.filter( dog => dog.isGoodDog )
-    :
-    dogs
+      dogs.filter( dog => dog.isGoodDog )
+      :
+      dogs
 
   const toggleDogStatus =( )=> {
     const patchRequest = {
