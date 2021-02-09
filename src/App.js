@@ -26,6 +26,24 @@ const App =( )=> {
     :
     dogs
 
+  const toggleDogStatus =( )=> {
+    const patchRequest = {
+      method: 'PATCH',
+      headers: {
+        'Content-type': 'application/json',
+        Accepts: 'application/json'
+      },
+      body: JSON.stringify( { isGoodDog: !dog.isGoodDog} )
+    }
+
+    fetch( dogsUrl + dog.id, patchRequest )
+    .then( res => res.json() )
+    .then( dogData => {
+      setDog( dogData )
+      setDogs( dogs.map( dog => dog.id === dogData.id ? dogData : dog ) )
+    })
+  }
+
   return (
     <div className="App">
       
@@ -51,6 +69,7 @@ const App =( )=> {
           { dog ?
             <Dog
               dog = { dog }
+              toggleDogStatus = { toggleDogStatus }
             />
             :
             null

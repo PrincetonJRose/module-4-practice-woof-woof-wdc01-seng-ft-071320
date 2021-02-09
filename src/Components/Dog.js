@@ -10,7 +10,9 @@ const Dog =( props )=> {
             <h2>
                 { name }
             </h2>
-            <button>
+            <button
+                onClick = { ()=> props.toggleDogStatus( ) }
+            >
                 { isGoodDog ?
                     'Good Dog!'
                     :
